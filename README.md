@@ -10,3 +10,6 @@ Dependencies:
     VB-Audio Cable
     VTuber Studio
   
+
+Video testing it: 
+https://www.youtube.com/watch?v=tzf5UXBdsYo 
