@@ -1,0 +1,73 @@
+pip installl openai
+pip install anthropic
+# pip install pyvts
+pip install keybaord #check back on this one
+pip install sounddevice
+pip install pyaudio
+pip install scipy
+
+https://www.youtube.com/watch?v=e4_AytZ264Q
+
+for vtuber, allow api and than put face input to MouthOpen
+
+https://www.youtube.com/watch?v=qEbn44m3Ty0
+
+https://learn.microsoft.com/en-us/azure/ai-services/speech-service/get-started-speech-to-text?tabs=windows%2Cterminal&pivots=programming-language-python
+
+
+To achieve the goal of having the Azure Voice Generation API interpret asterisks (*) in text as expressions or sounds rather than reading them aloud, you need to utilize SSML (Speech Synthesis Markup Language) to customize the speech output. Azure's Text-to-Speech (TTS) service supports SSML, which allows you to control various aspects of speech synthesis, including how special characters are handled.
+
+Here’s a step-by-step guide on how to use SSML to manage asterisks in your text:
+
+1. Prepare Your SSML
+SSML allows you to define how text should be spoken. You can use SSML to handle asterisks by inserting custom tags or special instructions that dictate how these characters should be treated.
+
+Here’s a basic example of SSML with an asterisk interpreted as a pause:
+
+xml
+Copy code
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.microsoft.com/speech/2009/06/ssml">
+    <voice name="en-US-JennyNeural">
+        This is an example of how to handle an asterisk.
+        <break time="500ms"/>
+        Here is a pause where the asterisk would have been.
+    </voice>
+</speak>
+In this example, <break time="500ms"/> represents a pause where the asterisk was. Adjust the timing to suit your needs.
+
+2. Create Your Custom SSML
+If you want to convey an expression or emotion instead of just a pause, you might use additional SSML tags or control parameters. For example:
+
+xml
+Copy code
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.microsoft.com/speech/2009/06/ssml">
+    <voice name="en-US-JennyNeural">
+        This is an example where an asterisk represents an emotional expression.
+        <prosody rate="fast" volume="x-loud">Here is the expression of excitement!</prosody>
+    </voice>
+</speak>
+3. Send Your SSML to Azure Text-to-Speech
+To send the SSML request to Azure's Text-to-Speech service, you’ll need to use their API endpoint. Here’s an example using a POST request:
+
+http
+Copy code
+POST https://<region>.tts.speech.microsoft.com/cognitiveservices/v1
+Content-Type: application/ssml+xml
+Ocp-Apim-Subscription-Key: <Your-Subscription-Key>
+
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.microsoft.com/speech/2009/06/ssml">
+    <voice name="en-US-JennyNeural">
+        This is your SSML text with custom handling of asterisks.
+        <break time="500ms"/>
+        Here is where the asterisk was replaced with a pause.
+    </voice>
+</speak>
+4. Adjust As Needed
+Test your SSML with the Azure API and adjust the tags or parameters as needed to get the desired result. You might need to experiment with different SSML elements like <prosody>, <break>, or <emphasis> to achieve the exact sound you want.
+
+Conclusion
+By using SSML, you can control how asterisks and other special characters are interpreted by Azure’s Text-to-Speech service. Whether you want to replace them with pauses, sounds, or expressions, SSML provides the flexibility to tailor the speech output to your needs.
+
+
+
+
