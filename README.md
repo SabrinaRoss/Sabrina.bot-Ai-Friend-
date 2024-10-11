@@ -8,9 +8,9 @@ Dependencies:
 
   Optional (if you want a avatar to mouth what the Ai says):
     
-    VB-Audio Cable,
+  VB-Audio Cable,
     
-    VTuber Studio
+  VTuber Studio
   
 
 Video testing it: 
