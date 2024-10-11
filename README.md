@@ -6,8 +6,10 @@ Dependencies:
   Azure Speech API Key (TTS and STT)
   ClaudeAi API Key
 
-  Optional (if you want a avatar to mouth what the Ai says)
-    VB-Audio Cable
+  Optional (if you want a avatar to mouth what the Ai says):
+    
+    VB-Audio Cable,
+    
     VTuber Studio
   
 
