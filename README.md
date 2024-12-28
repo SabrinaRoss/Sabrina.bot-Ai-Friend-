@@ -14,7 +14,20 @@ Dependencies:
     
   - VTuber Studio
   
+- To run this application please run the VTuber_Studio_Support_App.py (this does not only apply to the avatar code, I just did not feel like making another starter file), 
+- Optional! If using VTuber Studio connect one audio channel to VB-Audio-Cable and another to your prefered listening channel
+- Click the poorly made blue button to start speaking into the program
+- Wait awhile
+- Than click play 
+
 
 Video testing it: 
 
 https://www.youtube.com/watch?v=tzf5UXBdsYo 
+
+
+
+
+Image of the application:
+
+![image](https://github.com/user-attachments/assets/ec7ddbb6-700a-4222-9edb-d9dc339a3697)
